@@ -52,3 +52,8 @@ body {
 .computer{
     margin-right: 200px;
 }
+.last{
+    margin-bottom: -700px;
+    display: flex;
+    justify-content: center;
+}

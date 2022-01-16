@@ -24,6 +24,16 @@ function  computerPlay(){
     let playerScore = 0
     let computerScore = 0
 
+function reset() {
+    playerScore = 0
+    computerScore = 0
+    // resultText.textContent = "";
+    yourScore.textContent = 0;
+    computerMagic.textContent = 0;
+   
+    
+}
+
 
  function playRound(playerSelection, computerSelection) {   
     //  if( playerScore == 5){
@@ -38,88 +48,81 @@ function  computerPlay(){
     if(playerSelection.toLowerCase() == "rock" && computerSelection == "Paper"){
 
         if(playerScore == 5) {
-            resultText.textContent = "You wins"
-            playerScore = 0;
-            yourScore.textContent = 0;
+            resultText.textContent = "You win"
+            reset();
             return;
         }   else if (computerScore == 5){
             resultText.textContent = "Computer wins"
-            computerScore = 0;
-            computerMagic.textContent = 0;
+            reset();
             return;
-     } 
-
+        }
+  
         }
     else if (playerSelection.toLowerCase() == "rock" && computerSelection == "Scissors"){
         if(playerScore == 5) {
-            resultText.textContent = "You wins"
-            playerScore = 0;
-            yourScore.textContent = 0;
+            resultText.textContent = "You win"
+            reset();
             return;
         }   else if (computerScore == 5){
             resultText.textContent = "Computer wins"
-            computerScore = 0;
-            computerMagic.textContent = 0;
+            reset();
             return;
      } 
         playerScore++;
         yourScore.textContent = playerScore;
+       
         return "Player wins";}
     else if (playerSelection.toLowerCase() == "paper" && computerSelection == "Scissors"){
         if(playerScore == 5) {
-            resultText.textContent = "You wins"
-            playerScore = 0;
-            yourScore.textContent = 0;
+            resultText.textContent = "You win"
+           reset();
             return;
         }   else if (computerScore == 5){
             resultText.textContent = "Computer wins"
-            computerScore = 0;
-            computerMagic.textContent = 0;
+            reset();
             return;
      } 
         computerScore++;
         computerMagic.textContent = computerScore;
+        
         return "Computer wins";}
     else if (playerSelection.toLowerCase() == "paper" && computerSelection == "Rock"){
         if(playerScore == 5) {
-            resultText.textContent = "You wins"
-            playerScore = 0;
-            yourScore.textContent = 0;
+            resultText.textContent = "You win"
+            reset();
             return;
         }   else if (computerScore == 5){
             resultText.textContent = "Computer wins"
-            computerScore = 0;
-            computerMagic.textContent = 0;
+            reset();
             return;
      } 
         playerScore++;
         yourScore.textContent = playerScore;
+        
         return "Player wins";}
     else if (playerSelection.toLowerCase() == "scissors" && computerSelection == "Paper"){
         if(playerScore == 5) {
-            resultText.textContent = "You wins"
-            playerScore = 0;
-            yourScore.textContent = 0;
+            resultText.textContent = "You win"
+            reset();
             return;
         }   else if (computerScore == 5){
             resultText.textContent = "Computer wins"
-            computerScore = 0;
-            computerMagic.textContent = 0;
+            reset();
+          
             return;
      } 
         playerScore++;
         yourScore.textContent = playerScore;
+        
         return "Player wins";}
     else if (playerSelection.toLowerCase() == "scissors"  && computerSelection == "Rock"){
         if(playerScore == 5) {
-            resultText.textContent = "You wins"
-            playerScore = 0;
-            yourScore.textContent = 0;
+            resultText.textContent = "You win"
+            reset();
             return;
         }   else if (computerScore == 5){
             resultText.textContent = "Computer wins"
-            computerScore = 0;
-            computerMagic.textContent = 0;
+            reset();
             return;
      } 
         computerScore++;

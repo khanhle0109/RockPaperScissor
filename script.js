@@ -1,4 +1,9 @@
 
+const resultText = document.querySelector(".result-text");
+const yourScore = document.querySelector(".your-score");
+const computerMagic = document.querySelector(".computer-score")
+
+
 function  computerPlay(){
    let randomNumber = Math.floor(Math.random() * 3);
  if (randomNumber == 0){
@@ -10,29 +15,135 @@ function  computerPlay(){
      return "Scissors";
  }
  }
- console.log(computerPlay())
-function game(){
-    let computerSelection = computerPlay();
-    let playerSelection= prompt("Rock,Paper or Scissor");
-    console.log(playRound(playerSelection, computerSelection));
+// function game(){
+//     let computerSelection = computerPlay();
+//     let playerSelection= "Rock";
+//     console.log(playRound(playerSelection, computerSelection)); 
+// }
     
+    let playerScore = 0
+    let computerScore = 0
 
- function playRound(playerSelection, computerSelection) {
-     
+
+ function playRound(playerSelection, computerSelection) {   
+    //  if( playerScore == 5){
+    //      resultText.textContent = "Hello"
+    //      playerScore = 0;
+    //      return;
+    //  }
+    //  else if (computerScore == 5){
+    //      computerScore = 0;
+    //      return;
+    //  }
     if(playerSelection.toLowerCase() == "rock" && computerSelection == "Paper"){
-        return "Computer wins!"}
-    else if (playerSelection.toLowerCase() == "rock" && computerSelection == "Scissor"){
-        return "Player wins"}
-    else if (playerSelection.toLowerCase() == "paper" && computerSelection == "Scissor"){
-        return "Computer wins"}
+
+        if(playerScore == 5) {
+            resultText.textContent = "You wins"
+            playerScore = 0;
+            yourScore.textContent = 0;
+            return;
+        }   else if (computerScore == 5){
+            resultText.textContent = "Computer wins"
+            computerScore = 0;
+            computerMagic.textContent = 0;
+            return;
+     } 
+
+        }
+    else if (playerSelection.toLowerCase() == "rock" && computerSelection == "Scissors"){
+        if(playerScore == 5) {
+            resultText.textContent = "You wins"
+            playerScore = 0;
+            yourScore.textContent = 0;
+            return;
+        }   else if (computerScore == 5){
+            resultText.textContent = "Computer wins"
+            computerScore = 0;
+            computerMagic.textContent = 0;
+            return;
+     } 
+        playerScore++;
+        yourScore.textContent = playerScore;
+        return "Player wins";}
+    else if (playerSelection.toLowerCase() == "paper" && computerSelection == "Scissors"){
+        if(playerScore == 5) {
+            resultText.textContent = "You wins"
+            playerScore = 0;
+            yourScore.textContent = 0;
+            return;
+        }   else if (computerScore == 5){
+            resultText.textContent = "Computer wins"
+            computerScore = 0;
+            computerMagic.textContent = 0;
+            return;
+     } 
+        computerScore++;
+        computerMagic.textContent = computerScore;
+        return "Computer wins";}
     else if (playerSelection.toLowerCase() == "paper" && computerSelection == "Rock"){
-        return "Player wins"}
-    else if (playerSelection.toLowerCase() == "scissor" && computerSelection == "Paper"){
-        return "Player wins"}
-    else if (playerSelection.toLowerCase() == "scissor"  && computerSelection == "Rock"){
-        return "Computer wins"}
+        if(playerScore == 5) {
+            resultText.textContent = "You wins"
+            playerScore = 0;
+            yourScore.textContent = 0;
+            return;
+        }   else if (computerScore == 5){
+            resultText.textContent = "Computer wins"
+            computerScore = 0;
+            computerMagic.textContent = 0;
+            return;
+     } 
+        playerScore++;
+        yourScore.textContent = playerScore;
+        return "Player wins";}
+    else if (playerSelection.toLowerCase() == "scissors" && computerSelection == "Paper"){
+        if(playerScore == 5) {
+            resultText.textContent = "You wins"
+            playerScore = 0;
+            yourScore.textContent = 0;
+            return;
+        }   else if (computerScore == 5){
+            resultText.textContent = "Computer wins"
+            computerScore = 0;
+            computerMagic.textContent = 0;
+            return;
+     } 
+        playerScore++;
+        yourScore.textContent = playerScore;
+        return "Player wins";}
+    else if (playerSelection.toLowerCase() == "scissors"  && computerSelection == "Rock"){
+        if(playerScore == 5) {
+            resultText.textContent = "You wins"
+            playerScore = 0;
+            yourScore.textContent = 0;
+            return;
+        }   else if (computerScore == 5){
+            resultText.textContent = "Computer wins"
+            computerScore = 0;
+            computerMagic.textContent = 0;
+            return;
+     } 
+        computerScore++;
+        computerMagic.textContent = computerScore;
+        return "Computer wins" ;}
+    else {
+        return "Tie";
     }
-}
-game()
     
- 
+        
+}
+// game()
+
+// console.log (playRound(playerSelection,computerSelection))
+
+
+
+ const rockButton = document.querySelector(".rock")
+ rockButton.addEventListener("click", () => console.log(playRound("rock", computerPlay())));
+
+ const scissorsButton = document.querySelector(".scissors")
+ scissorsButton.addEventListener("click", () => console.log(playRound("scissors", computerPlay())));
+
+ const paperButton = document.querySelector(".paper")
+ paperButton.addEventListener("click", () => console.log(playRound("paper", computerPlay())));
+
+
